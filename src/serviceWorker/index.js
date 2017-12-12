@@ -28,8 +28,7 @@ window.onload = function () {
         src = 'http://img.taopic.com/uploads/allimg/120727/201995-120HG1030762.jpg';
      myImage.src = src;
     // getImg(src).then(res=>{
-    //     var reader = new FileReader(),
-    //         src =  reader.readAsDataURL(res);
+    //     var src =  window.url.createObjectURL(res);
     //         myImage.src = src    
     // })
 }
