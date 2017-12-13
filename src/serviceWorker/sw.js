@@ -2,7 +2,7 @@ const PRECACHE = 'precache_test'
 const RUNTIME = 'runtime';
 const PRECACHE_URLS = [
     './',
-    'http://img.taopic.com/uploads/allimg/120727/201995-120HG1030762.jpg',
+    '/asset/sw.jpg',
     'index.js'
 ]
 self.addEventListener('install',event=>{
