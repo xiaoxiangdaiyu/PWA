@@ -2,8 +2,8 @@ const PRECACHE = 'precache_test_1'
 const RUNTIME = 'runtime';
 const PRECACHE_URLS = [
     './',
-    '/asset/sw.jpg'
-    // 'index.js'
+    '/asset/sw.jpg',
+    'index.js'
 ]
 self.addEventListener('install',e=>{
     e.waitUntil(
