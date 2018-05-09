@@ -1,31 +1,31 @@
-const PRECACHE = 'precache_test_1'
+const CURCACHE = 'CURCACHE_test_1'
 const RUNTIME = 'runtime';
-const PRECACHE_URLS = [
+const CURCACHE_URLS = [
     './',
     '/asset/sw.jpg',
     'index.js'
 ]
 self.addEventListener('install',e=>{
     e.waitUntil(
-        caches.open(PRECACHE).then(cache=>{
-            cache.addAll(PRECACHE_URLS)
+        caches.open(CURCACHE).then(cache=>{
+            cache.addAll(CURCACHE_URLS)
         }).then(
             self.skipWaiting()
         )
     )
 })
 self.addEventListener('activate', e => {
-    const currentCaches = [PRECACHE, RUNTIME];
-    e.waitUntil(
-      Promise.all(
-        caches.keys().filter(name => {
-          return name !== PRECACHE
-        }).map(name => {
-          return caches.delete(name)
-        })
-      ).then(() => self.clients.claim())
-    )
-  });
+  e.waitUntil(
+      caches.keys().then(cacheNames=>{
+        return Promise.all(
+          cacheNames.map(function(cacheName) {
+            if (cacheName !== CURCACHE) {
+              return caches.delete(cacheName);
+            }
+          })
+    )}).then(() => self.clients.claim())
+ )
+})
   
   
   self.addEventListener('fetch', e => {
