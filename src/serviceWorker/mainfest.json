@@ -2,7 +2,7 @@
     "name": "PQJ-PWA",
     "short_name":"PQJ",
     "description": "测试demo",
-    "launch_path": "/index.html",
+    "start_url": "/index.html",
     "icons": {
       "128": "/asset/sw.jpg"
     },
