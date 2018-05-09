@@ -19,7 +19,7 @@ self.addEventListener('activate', e => {
     e.waitUntil(
       Promise.all(
         caches.keys().filter(name => {
-          return name !== cacheStorageKey
+          return name !== PRECACHE
         }).map(name => {
           return caches.delete(name)
         })
